@@ -3,7 +3,7 @@ defmodule GelfLogger.Mixfile do
 
   def project do
     [app: :gelf_logger,
-     version: "0.7.4",
+     version: "0.8.0",
      elixir: "~> 1.2",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
@@ -30,8 +30,9 @@ defmodule GelfLogger.Mixfile do
 
   defp deps do
    [
-     {:poison, ">= 1.0.0"},
-     {:ex_doc, "~> 0.14", only: :dev}
+     {:ex_doc, "~> 0.14", only: :dev},
+     {:jason, ">= 1.0.0", only: [:dev, :test]},
+     {:poison, ">= 1.0.0", only: [:dev, :test]},
    ]
   end
 
